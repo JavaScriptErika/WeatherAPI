@@ -1,0 +1,49 @@
+body {
+    font: 300 112.5%/1.5em "Helvetica", "Arial", sans-serif;
+    margin: 3em 3em 6em;
+    padding: 0;
+}
+
+article {
+    margin: auto;
+    width: 30em;
+}
+
+h1 {
+    font-size: 3em;
+    line-height: 1em;
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+p {
+    margin: 1.5em 0;
+}
+
+figure {
+    margin: 3em auto;
+    width: 368px;
+    height: 152px;
+}
+
+canvas {
+    display: block;
+    float: left;
+    margin-left: 8px;
+    margin-top: 8px;
+}
+
+pre {
+    font: 77.8%/1.5em "Lucida Sans Typewriter", "Lucida Console", "Monaco", "Bitstream Vera Sans Mono", monospace;
+    margin: 3.375em 1.6875em;
+}
+
+a,
+pre span.comment {
+    color: royalblue;
+}
+
+a:visited,
+pre span.constant {
+    color: indianred;
+}
