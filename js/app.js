@@ -11,7 +11,7 @@
 			this.$description = $("#tempDescription");
 			this.$area = $("#area");
 			this.$summary = $("#summary");
-			this.$showData = $(".info").show();
+			this.$htmlEl = $(".info");
 			this.$button = $("button");
 			this.$icon = $("#icon");
 		},
@@ -34,7 +34,7 @@
 
 		error: function () {
 			this.$description.html("Unable to retrieve your location");
-			this.$showData.toggle(); //if darksky api works and shows, still want to hide elements
+			this.$htmlEl.hide();
 		},
 
 		geocodeRequest: function (coordinates) { //converts coordinates into user's city and state
@@ -55,11 +55,11 @@
 					this.weatherIcon(iconDisplay);
 					this.weatherSummary(summary);
 					this.temperature(); //Will use fTemp
-					this.$showData;
+					this.$htmlEl.show();
 				}, this))
-				.fail(function () {
-					this.$description.html("Sorry, please try again later")
-				});
+				.fail($.proxy(function () {
+					this.$description.html("Sorry, please try again later").bind(this);
+				}, this));
 		},
 
 		weatherIcon: function (iconDisplay) {
