@@ -71,7 +71,7 @@
 		},
 
 		temperature: function () { //uses fTemp from gobal declaration(in context of object)
-			this.$description.html(`Feels like ${fTemp}&deg;F`);
+			this.$description.html(`Feels ${fTemp} \xB0F`);
 		},
 
 		bindEvents: function () {
@@ -82,12 +82,12 @@
 		convertTemp: function () {
 			let cTemp = ((fTemp - 32) * (5 / 9));
 			//ternary operator to change the text of button when clicked
-			this.$button.text(this.$button.text() == 'Fahrenheit' ? 'Celcius' : 'Fahrenheit');
+			this.$button.text(this.$button.text() == ' \xB0F' ? ' \xB0C' : ' \xB0F');
 			//When button does not say Fahrenheit (since it's already converted to that), show temp in Fahrenheit from temperature func, else show Celsius
-			if (this.$button.text() !== 'Fahrenheit') {
+			if (this.$button.text() !== ' \xB0F') {
 				this.temperature(fTemp);
 			} else {
-				this.$description.html(`Feels like ${cTemp.toFixed(2)}&deg;C`);
+				this.$description.html(`Feels ${cTemp.toFixed(2)} \xB0C`);
 			}
 		},
 
