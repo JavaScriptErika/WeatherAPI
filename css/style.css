@@ -1,23 +1,49 @@
 body {
-    font: 300 112.5%/1.5em "Helvetica", "Arial", sans-serif;
-    margin: 3em 3em 6em;
-    padding: 0;
+    font-family: 'Oxygen', sans-serif;
 }
 
-h1 {
-    font-size: 3em;
-    line-height: 1em;
+.weatherDisplay {
     text-align: center;
-    margin: 0.5em 0;
+    margin: 30% auto 0;
+    width: 90%;
+    padding: 1em;
+    background: rgba(181, 181, 181, 0.24);
+    border-top-right-radius: 5%;
+    border-top-left-radius: 5%;
+    box-shadow: 1px 2px 1px rgba(0, 0, 0, .2)
 }
 
-p {
-    margin: 1.5em 0;
+#area {
+    font-size: 3em;
+    border-bottom: 2px solid lightgray;
+    padding-bottom: .2em;
+}
+
+#area,
+#summary {
+    margin: 0;
+}
+
+#summary,
+#tempDescription {
+    font-size: 2em;
 }
 
 #icon {
-    width: 200px;
-    height: 200px;
+    height: 10em;
+}
+
+#tempDescription {
+    display: inline-block;
+}
+
+.degreesBtn {
+    border-radius: 10%;
+    padding: .1em .4em;
+    font-size: 1.8em;
+    margin-left: 1em;
+    border-style: none;
+    background-color: rgba(5, 196, 145, 0.35);
 }
 
 .info {
