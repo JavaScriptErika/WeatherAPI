@@ -6,14 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Weather API</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen">
     <link rel="stylesheet" href="css/style.css">
   </head>
 
   <body>
-    <div>
-      <h2 id="tempDescription"></h2> <button id="cel">Celsius</button>
-      <p id="sky"></p>
-      <img id="icon" src="" / width="200" height="200">
+    <div class="weatherDisplay">
+      <h1 class="info" id="area"></h1>
+      <img class="info" id="icon">
+      <h3 id="summary"></h3>
+      <h2 id="tempDescription"></h2>
+      <button class="info degreesBtn">&deg;C</button>
     </div>
 
 

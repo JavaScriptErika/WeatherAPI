@@ -1,49 +1,69 @@
 body {
-    font: 300 112.5%/1.5em "Helvetica", "Arial", sans-serif;
-    margin: 3em 3em 6em;
-    padding: 0;
+    font-family: 'Oxygen', sans-serif;
 }
 
-article {
-    margin: auto;
-    width: 30em;
-}
-
-h1 {
-    font-size: 3em;
-    line-height: 1em;
+.weatherDisplay {
     text-align: center;
-    margin: 0.5em 0;
+    margin: 30% auto 0;
+    width: 90%;
+    padding: 1em;
+    background: rgba(181, 181, 181, 0.14);
+    border-top-right-radius: 5%;
+    border-top-left-radius: 5%;
+    box-shadow: 1px 2px 1px rgba(0, 0, 0, .2)
 }
 
-p {
-    margin: 1.5em 0;
+#area {
+    font-size: 3em;
+    border-bottom: 2px solid lightgray;
+    padding-bottom: .2em;
 }
 
-figure {
-    margin: 3em auto;
-    width: 368px;
-    height: 152px;
+#area,
+#summary {
+    margin: 0;
 }
 
-canvas {
-    display: block;
-    float: left;
-    margin-left: 8px;
-    margin-top: 8px;
+#tempDescription,
+#summary {
+    font-size: 2em;
 }
 
-pre {
-    font: 77.8%/1.5em "Lucida Sans Typewriter", "Lucida Console", "Monaco", "Bitstream Vera Sans Mono", monospace;
-    margin: 3.375em 1.6875em;
+#icon {
+    height: 10em;
 }
 
-a,
-pre span.comment {
-    color: royalblue;
+#tempDescription {
+    display: inline-block;
 }
 
-a:visited,
-pre span.constant {
-    color: indianred;
+.degreesBtn {
+    border-radius: 10%;
+    padding: .1em .4em;
+    font-size: 1.8em;
+    margin-left: 1em;
+    border-style: none;
+    background-color: rgba(5, 196, 145, 0.35);
+}
+
+.info {
+    display: none;
+}
+
+
+/*Media Queries*/
+
+@media only screen and (min-width: 500px) and (orientation: landscape) {
+    .weatherDisplay {
+        margin-top: 3%;
+        width: 60%;
+        font-size: .8em;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .weatherDisplay {
+        margin-top: 10%;
+        width: 40%;
+    }
 }
