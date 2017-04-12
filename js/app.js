@@ -20,7 +20,7 @@
 			if (!navigator.geolocation) { //checks if geolocation object is not available in browser
 				this.$description.html("Geolocation is not supported by your browser");
 			} else {
-				navigator.geolocation.getCurrentPosition(this.success.bind(this), this.error.bind(this)); //callback functions of success and error
+				navigator.geolocation.getCurrentPosition(this.success.bind(this), this.error.bind(this)); //callback functions of success and error, using bind this to refer to context of object and not getCurrentPosition().
 			}
 		},
 
@@ -70,7 +70,7 @@
 			this.$summary.html(summary);
 		},
 
-		temperature: function () { //uses fTemp from goval declaration(in context of object)
+		temperature: function () { //uses fTemp from gobal declaration(in context of object)
 			this.$description.html(`Feels like ${fTemp}&deg;F`);
 		},
 
@@ -87,7 +87,7 @@
 			if (this.$button.text() !== 'Fahrenheit') {
 				this.temperature(fTemp);
 			} else {
-				this.$description.html(`Feels like ${cTemp.toFixed(2)} &deg;C`);
+				this.$description.html(`Feels like ${cTemp.toFixed(2)}&deg;C`);
 			}
 		},
 
