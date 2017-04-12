@@ -24,8 +24,8 @@ body {
     margin: 0;
 }
 
-#summary,
-#tempDescription {
+#tempDescription,
+#summary {
     font-size: 2em;
 }
 

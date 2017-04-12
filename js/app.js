@@ -12,7 +12,7 @@
 			this.$area = $("#area");
 			this.$summary = $("#summary");
 			this.$htmlEl = $(".info");
-			this.$button = $("button");
+			this.$button = $(".degreesBtn");
 			this.$icon = $("#icon");
 		},
 
@@ -26,10 +26,10 @@
 
 		success: function (position) { //stores latitude and longitude
 			const lat = position.coords.latitude,
-				lon = position.coords.longitude,
-				urlCoordinates = lat + "," + lon;
+						lon = position.coords.longitude,
+						urlCoordinates = lat + "," + lon;
 			this.geocodeRequest(urlCoordinates); //google api to grab location from coordinates
-			this.weatherRequest(urlCoordinates); //dark sky api for weather conditions
+			this.weatherRequest(urlCoordinates); //dark sky api for weather conditions from coordinates
 		},
 
 		error: function () {
@@ -50,7 +50,7 @@
 
 					const iconDisplay = data.currently.icon;
 					const summary = data.currently.summary;
-					fTemp = data.currently.apparentTemperature; //global in the context of the object to access variable in bindEvents();
+					fTemp = data.currently.apparentTemperature; //global in the context of the closure to access variable in bindEvents();
 
 					this.weatherIcon(iconDisplay);
 					this.weatherSummary(summary);
@@ -70,7 +70,7 @@
 			this.$summary.html(summary);
 		},
 
-		temperature: function () { //uses fTemp from gobal declaration(in context of object)
+		temperature: function () { //uses fTemp from global declaration(in context of object)
 			this.$description.html(`Feels ${fTemp} \xB0F`);
 		},
 
